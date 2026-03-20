@@ -1,5 +1,5 @@
 app_name = "uot_hr"
-app_title = "university of technology human resource managment application"
+app_title = "UOT-HR"
 app_publisher = "Eng. Taha Al-Naseri"
 app_description = "this app for manageing the human resource in the university of technology - iraq "
 app_email = "taha.a.oohayyid@uotechnology.edu.iq"
@@ -247,3 +247,11 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+permission_query_conditions = {
+    "UOT Leave Request": "uot_hr.uot_hr.permissions.leave_request.get_permission_query_conditions",
+    "UOT Employees": "uot_hr.uot_hr.permissions.leave_request.get_employee_permission_query_conditions"
+}
+
+has_permission = {
+    "UOT Leave Request": "uot_hr.uot_hr.doctype.uot_leave_request.uot_leave_request.has_permission"
+}
