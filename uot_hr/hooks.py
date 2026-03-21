@@ -282,7 +282,7 @@ fixtures = [
     # Workflow
     {
         "doctype": "Workflow",
-        "filters": [["document_type", "=", "UOT Leave Request"]]
+        "filters": [["name", "=", "leave reques approval workflow"]]
     },
     # Workflow States
     {
@@ -290,7 +290,9 @@ fixtures = [
         "filters": [["name", "in", [
             "Pending",
             "Approved",
-            "Rejected"
+            "Rejected",
+            "approved by the line manager",
+            "Approved by the Administrative Associate"
         ]]]
     },
     # Workflow Actions
@@ -299,7 +301,12 @@ fixtures = [
         "filters": [["name", "in", [
             "Approve",
             "Reject",
-            "Submit"
+            "Review"
         ]]]
+    },
+    # Workspace
+    {
+        "doctype": "Workspace",
+        "filters": [["name", "=", "UOT HR"]]
     }
 ]
