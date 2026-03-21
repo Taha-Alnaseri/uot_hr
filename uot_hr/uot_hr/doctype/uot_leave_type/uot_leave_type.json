@@ -1,33 +1,35 @@
 {
  "actions": [],
- "autoname": "field:name1",
+ "autoname": "Leave Type- .###",
  "creation": "2026-02-28 22:40:35.684821",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
+  "leave_type",
   "column_break_jldi"
  ],
  "fields": [
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name",
-   "unique": 1
-  },
-  {
    "fieldname": "column_break_jldi",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Leave Type",
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-20 15:54:08.939338",
+ "modified": "2026-03-21 12:53:29.658528",
  "modified_by": "Administrator",
  "module": "uot-hr",
  "name": "UOT Leave Type",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -54,7 +56,11 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "search_fields": "leave_type",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "leave_type",
+ "translated_doctype": 1
 }

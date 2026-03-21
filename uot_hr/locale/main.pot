@@ -1,0 +1,195 @@
+# Translations template for UOT-HR.
+# Copyright (C) 2026 Eng. Taha Al-Naseri
+# This file is distributed under the same license as the UOT-HR project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UOT-HR VERSION\n"
+"Report-Msgid-Bugs-To: taha.a.oohayyid@uotechnology.edu.iq\n"
+"POT-Creation-Date: 2026-03-20 20:18+0258\n"
+"PO-Revision-Date: 2026-03-20 20:18+0258\n"
+"Last-Translator: taha.a.oohayyid@uotechnology.edu.iq\n"
+"Language-Team: taha.a.oohayyid@uotechnology.edu.iq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#. Name of a role
+#: uot_hr/uot_hr/doctype/uot_leave_type/uot_leave_type.json
+msgid "All"
+msgstr ""
+
+#. Label of a Link field in DocType 'UOT Leave Request'
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "Amended From"
+msgstr ""
+
+#. Label of a Date field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "Date of birth"
+msgstr ""
+
+#. Label of a Int field in DocType 'UOT Leave Request'
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "Days of Leave"
+msgstr ""
+
+#. Label of a Link field in DocType 'UOT Departments'
+#: uot_hr/uot_hr/doctype/uot_departments/uot_departments.json
+msgid "Department Manager"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Departments'
+#: uot_hr/uot_hr/doctype/uot_departments/uot_departments.json
+msgid "Department Name"
+msgstr ""
+
+#. Label of a Link field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "Employee Department or Division"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "Employee ID"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "Employee Natioinal ID number"
+msgstr ""
+
+#. Label of a Link field in DocType 'UOT Leave Request'
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "Employee id"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "Family Name"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "Father Name"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "First name"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Leave Request'
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "Full Name"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "Grandfather Name"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "Great Grandfather Name"
+msgstr ""
+
+#. Label of a Link field in DocType 'UOT Leave Request'
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "Leave Type"
+msgstr ""
+
+#. Label of a Date field in DocType 'UOT Leave Request'
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "Leave from Day"
+msgstr ""
+
+#. Label of a Date field in DocType 'UOT Leave Request'
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "Leave to Day"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Departments'
+#: uot_hr/uot_hr/doctype/uot_departments/uot_departments.json
+msgid "Manager User"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Leave Type'
+#: uot_hr/uot_hr/doctype/uot_leave_type/uot_leave_type.json
+msgid "Name"
+msgstr ""
+
+#. Label of a Small Text field in DocType 'UOT Leave Request'
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "Reason for leave"
+msgstr ""
+
+#. Name of a role
+#: uot_hr/uot_hr/doctype/uot_departments/uot_departments.json
+#: uot_hr/uot_hr/doctype/uot_employee_type/uot_employee_type.json
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+#: uot_hr/uot_hr/doctype/uot_leave_type/uot_leave_type.json
+msgid "System Manager"
+msgstr ""
+
+#. Name of a role
+#: uot_hr/uot_hr/doctype/uot_departments/uot_departments.json
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "UOT Department manager"
+msgstr ""
+
+#. Name of a DocType
+#: uot_hr/uot_hr/doctype/uot_departments/uot_departments.json
+msgid "UOT Departments"
+msgstr ""
+
+#. Name of a role
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "UOT Employee"
+msgstr ""
+
+#. Name of a DocType
+#: uot_hr/uot_hr/doctype/uot_employee_type/uot_employee_type.json
+msgid "UOT Employee Type"
+msgstr ""
+
+#. Name of a DocType
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "UOT Employees"
+msgstr ""
+
+#. Name of a DocType
+#: uot_hr/uot_hr/doctype/uot_leave_request/uot_leave_request.json
+msgid "UOT Leave Request"
+msgstr ""
+
+#. Name of a DocType
+#: uot_hr/uot_hr/doctype/uot_leave_type/uot_leave_type.json
+msgid "UOT Leave Type"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "department manager user"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "employee full name"
+msgstr ""
+
+#. Label of a Data field in DocType 'UOT Employee Type'
+#. Label of a Link field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employee_type/uot_employee_type.json
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "employee type"
+msgstr ""
+
+#. Label of a Link field in DocType 'UOT Employees'
+#: uot_hr/uot_hr/doctype/uot_employees/uot_employees.json
+msgid "employee user"
+msgstr ""
+

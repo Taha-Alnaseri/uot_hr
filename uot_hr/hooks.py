@@ -249,9 +249,57 @@ app_license = "mit"
 
 permission_query_conditions = {
     "UOT Leave Request": "uot_hr.uot_hr.permissions.leave_request.get_permission_query_conditions",
-    "UOT Employees": "uot_hr.uot_hr.permissions.leave_request.get_employee_permission_query_conditions"
+    "UOT Employees": "uot_hr.uot_hr.permissions.leave_request.get_employee_permission_query_conditions",
+    "User": "uot_hr.uot_hr.permissions.leave_request.get_user_permission_query_conditions"
 }
 
 has_permission = {
     "UOT Leave Request": "uot_hr.uot_hr.doctype.uot_leave_request.uot_leave_request.has_permission"
 }
+
+after_migrate = [
+    "uot_hr.uot_hr.api.sync_custom_permissions"
+]
+
+
+fixtures = [
+    # Roles
+    {
+        "doctype": "Role",
+        "filters": [["name", "in", [
+            "UOT Employee",
+            "UOT Department manager",
+            "UOT HR Manager",
+            "UOT Administrative Associate",
+            "UOT Dean"
+        ]]]
+    },
+    # Leave Types
+    {
+        "doctype": "UOT Leave Type",
+        "filters": [["name", "like", "Leave Type%"]]
+    },
+    # Workflow
+    {
+        "doctype": "Workflow",
+        "filters": [["document_type", "=", "UOT Leave Request"]]
+    },
+    # Workflow States
+    {
+        "doctype": "Workflow State",
+        "filters": [["name", "in", [
+            "Pending",
+            "Approved",
+            "Rejected"
+        ]]]
+    },
+    # Workflow Actions
+    {
+        "doctype": "Workflow Action Master",
+        "filters": [["name", "in", [
+            "Approve",
+            "Reject",
+            "Submit"
+        ]]]
+    }
+]

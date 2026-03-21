@@ -1,0 +1,23 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "UOT Leave Type",
+  "leave_type": "أجازة أعتيادية",
+  "modified": "2026-03-21 12:57:24.354769",
+  "name": "Leave Type- 001"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOT Leave Type",
+  "leave_type": "أجازة بدون راتب",
+  "modified": "2026-03-21 12:57:42.369448",
+  "name": "Leave Type- 002"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOT Leave Type",
+  "leave_type": "أجازة أمومة",
+  "modified": "2026-03-21 12:57:53.370333",
+  "name": "Leave Type- 003"
+ }
+]
