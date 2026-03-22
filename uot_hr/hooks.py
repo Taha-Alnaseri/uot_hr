@@ -334,8 +334,19 @@ fixtures = [
             "Leave Request-workflow_state"
         ]]]
     },
-    # Employee Types
+        # Notifications
     {
-        "doctype": "UOT Employee Type"
+        "doctype": "Role Profile",
+        "filters": [["name", "in", [
+            "UOT Administrative associte",
+            "UOT Department Manager",
+            "UOT Dean",
+            "UOT Employee",
+            "UOT HR Manager"
+        ]]]
     }
+    # Employee Types
+   # {
+   #     "doctype": "UOT Employee Type"
+   # }
 ]

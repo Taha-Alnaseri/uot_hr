@@ -1,0 +1,101 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2026-03-23 01:02:28.354752",
+  "name": "UOT Employee",
+  "role_profile": "UOT Employee",
+  "roles": [
+   {
+    "parent": "UOT Employee",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "UOT Employee"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2026-03-23 01:02:58.874427",
+  "name": "UOT Dean",
+  "role_profile": "UOT Dean",
+  "roles": [
+   {
+    "parent": "UOT Dean",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "UOT Dean"
+   },
+   {
+    "parent": "UOT Dean",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "UOT Employee"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2026-03-23 01:03:21.831312",
+  "name": "UOT Department Manager",
+  "role_profile": "UOT Department Manager",
+  "roles": [
+   {
+    "parent": "UOT Department Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "UOT Department manager"
+   },
+   {
+    "parent": "UOT Department Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "UOT Employee"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2026-03-23 01:03:40.584655",
+  "name": "UOT Administrative associte",
+  "role_profile": "UOT Administrative associte",
+  "roles": [
+   {
+    "parent": "UOT Administrative associte",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "UOT Administrative Associate"
+   },
+   {
+    "parent": "UOT Administrative associte",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "UOT Employee"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2026-03-23 01:08:59.898542",
+  "name": "UOT HR Manager",
+  "role_profile": "UOT HR Manager",
+  "roles": [
+   {
+    "parent": "UOT HR Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "UOT HR Manager"
+   },
+   {
+    "parent": "UOT HR Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "UOT Employee"
+   }
+  ]
+ }
+]

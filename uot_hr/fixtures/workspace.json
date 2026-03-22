@@ -1,7 +1,7 @@
 [
  {
   "charts": [],
-  "content": "[{\"id\":\"L9o7Sx2dL3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">UOT HR</span>\",\"col\":12}},{\"id\":\"PMBOjnPqeN\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Leave Requests\",\"col\":4}},{\"id\":\"mQSf9fQK3F\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vVOta522In\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Leave Request\",\"col\":3}},{\"id\":\"X5TqK3mkfy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employees\",\"col\":3}},{\"id\":\"Lu7w_gEhAf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Departments or Divisions\",\"col\":4}},{\"id\":\"3FyAbgoQFR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Type\",\"col\":3}}]",
+  "content": "[{\"id\":\"L9o7Sx2dL3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h1\\\">UOT - HR</span>\",\"col\":12}},{\"id\":\"PMBOjnPqeN\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Leave Requests\",\"col\":4}},{\"id\":\"mQSf9fQK3F\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"g7FgMkhlfk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Leave Request</span>\",\"col\":12}},{\"id\":\"vVOta522In\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Leave Request\",\"col\":3}},{\"id\":\"wtjj7f_L51\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Request\",\"col\":3}},{\"id\":\"C1dYSLX3MQ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"kRKSMnBk0C\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">HR Management</span>\",\"col\":12}},{\"id\":\"X5TqK3mkfy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employees\",\"col\":3}},{\"id\":\"Lu7w_gEhAf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Departments or Divisions\",\"col\":4}},{\"id\":\"3FyAbgoQFR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Type\",\"col\":3}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -12,7 +12,7 @@
   "is_hidden": 0,
   "label": "UOT HR",
   "links": [],
-  "modified": "2026-03-20 23:09:21.393600",
+  "modified": "2026-03-23 00:47:43.469523",
   "module": "uot-hr",
   "name": "UOT HR",
   "number_cards": [
@@ -39,6 +39,23 @@
     "kanban_board": null,
     "label": "Employees",
     "link_to": "UOT Employees",
+    "parent": "UOT HR",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Leave Request",
+    "link_to": "UOT Leave Request",
     "parent": "UOT HR",
     "parentfield": "shortcuts",
     "parenttype": "Workspace",

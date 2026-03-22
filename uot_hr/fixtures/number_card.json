@@ -1,8 +1,8 @@
 [
  {
   "aggregate_function_based_on": "",
-  "background_color": null,
-  "color": "#ff4747",
+  "background_color": "#ffffff",
+  "color": "#CB2929",
   "currency": "IQD",
   "docstatus": 0,
   "doctype": "Number Card",
@@ -15,7 +15,7 @@
   "is_standard": 1,
   "label": "Leave Requests",
   "method": null,
-  "modified": "2026-03-20 22:50:59.215752",
+  "modified": "2026-03-23 00:58:42.934867",
   "module": "uot-hr",
   "name": "Leave Requests",
   "parent_document_type": "",

@@ -26,12 +26,5 @@
   "employee_type": "تدريسي",
   "modified": "2026-03-21 22:32:11.238347",
   "name": "Employee Type-04"
- },
- {
-  "docstatus": 0,
-  "doctype": "UOT Employee Type",
-  "employee_type": "teacher",
-  "modified": "2026-03-17 20:29:07.461614",
-  "name": "teacher"
  }
 ]
