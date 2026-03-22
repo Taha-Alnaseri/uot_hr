@@ -36,16 +36,20 @@ def get_permission_query_conditions(user=None):
         if not managed_departments:
             return "1=0"
 
-        dept_list = ", ".join(f"'{d}'" for d in managed_departments)
+        # FIXED: use parameterized query
+        placeholders = ", ".join(["%s"] * len(managed_departments))
         employees_in_dept = frappe.db.sql(f"""
             SELECT name FROM `tabUOT Employees`
-            WHERE employee_department_or_division IN ({dept_list})
-        """, as_list=True)
+            WHERE employee_department_or_division IN ({placeholders})
+        """, managed_departments, as_list=True)
 
         if not employees_in_dept:
             return "1=0"
 
-        emp_list = ", ".join(f"'{e[0]}'" for e in employees_in_dept)
+        # FIXED: use frappe.db.escape
+        emp_list = ", ".join(
+            frappe.db.escape(e[0]) for e in employees_in_dept
+        )
         return f"`tabUOT Leave Request`.employee IN ({emp_list})"
 
     employee = frappe.db.get_value(
@@ -56,7 +60,8 @@ def get_permission_query_conditions(user=None):
     if not employee:
         return "1=0"
 
-    return f"`tabUOT Leave Request`.employee = '{employee}'"
+    # FIXED: use frappe.db.escape
+    return f"`tabUOT Leave Request`.employee = {frappe.db.escape(employee)}"
 
 
 def get_employee_permission_query_conditions(user=None):
@@ -68,11 +73,9 @@ def get_employee_permission_query_conditions(user=None):
 
     roles = frappe.get_roles(user)
 
-    # Full access roles
     if any(r in roles for r in ["UOT Dean", "UOT HR Manager", "UOT Administrative Associate"]):
         return ""
 
-    # Department Manager: see only their department's employees
     if "UOT Department manager" in roles:
         manager_employee = frappe.db.sql("""
             SELECT name FROM `tabUOT Employees`
@@ -91,10 +94,12 @@ def get_employee_permission_query_conditions(user=None):
         if not managed_departments:
             return "1=0"
 
-        dept_list = ", ".join(f"'{d}'" for d in managed_departments)
+        # FIXED: use frappe.db.escape
+        dept_list = ", ".join(
+            frappe.db.escape(d) for d in managed_departments
+        )
         return f"`tabUOT Employees`.employee_department_or_division IN ({dept_list})"
 
-    # Regular Employee: can only see their own record
     result = frappe.db.sql("""
         SELECT name FROM `tabUOT Employees`
         WHERE employee_user = %s
@@ -104,7 +109,8 @@ def get_employee_permission_query_conditions(user=None):
     if not result:
         return "1=0"
 
-    return f"`tabUOT Employees`.name = '{result[0][0]}'"
+    # FIXED: use frappe.db.escape
+    return f"`tabUOT Employees`.name = {frappe.db.escape(result[0][0])}"
 
 
 def get_user_permission_query_conditions(user=None):
@@ -116,9 +122,8 @@ def get_user_permission_query_conditions(user=None):
 
     roles = frappe.get_roles(user)
 
-    # Full access roles
     if any(r in roles for r in ["UOT Dean", "UOT HR Manager", "UOT Administrative Associate"]):
         return ""
 
-    # Everyone else can only see their own user record
-    return f"`tabUser`.`name` = '{user}'"
+    # FIXED: use frappe.db.escape
+    return f"`tabUser`.`name` = {frappe.db.escape(user)}"
