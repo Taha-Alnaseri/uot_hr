@@ -1,0 +1,37 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "UOT Employee Type",
+  "employee_type": "مهندس",
+  "modified": "2026-03-21 22:31:49.728998",
+  "name": "Employee Type-01"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOT Employee Type",
+  "employee_type": "فني",
+  "modified": "2026-03-21 22:31:58.601336",
+  "name": "Employee Type-02"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOT Employee Type",
+  "employee_type": "أداري",
+  "modified": "2026-03-21 22:32:04.413731",
+  "name": "Employee Type-03"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOT Employee Type",
+  "employee_type": "تدريسي",
+  "modified": "2026-03-21 22:32:11.238347",
+  "name": "Employee Type-04"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOT Employee Type",
+  "employee_type": "teacher",
+  "modified": "2026-03-17 20:29:07.461614",
+  "name": "teacher"
+ }
+]

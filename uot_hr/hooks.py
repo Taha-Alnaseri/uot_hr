@@ -333,5 +333,9 @@ fixtures = [
         "filters": [["name", "in", [
             "Leave Request-workflow_state"
         ]]]
+    },
+    # Employee Types
+    {
+        "doctype": "UOT Employee Type"
     }
 ]
