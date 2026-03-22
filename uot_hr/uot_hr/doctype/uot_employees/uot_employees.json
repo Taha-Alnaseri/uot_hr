@@ -18,8 +18,10 @@
   "date_of_birth",
   "column_break_olyf",
   "employee_natioinal_id_number",
+  "phone_number",
   "section_break_cepj",
   "employee_type",
+  "date_of_appointment",
   "employee_user",
   "column_break_qohf",
   "employee_department_or_division",
@@ -29,7 +31,6 @@
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "First name",
    "reqd": 1
   },
@@ -40,14 +41,12 @@
   {
    "fieldname": "father_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Father Name",
    "reqd": 1
   },
   {
    "fieldname": "grandfather_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Grandfather Name",
    "reqd": 1
   },
@@ -64,6 +63,9 @@
   {
    "fieldname": "employee_id",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Employee ID",
    "reqd": 1,
    "unique": 1
@@ -86,13 +88,15 @@
   {
    "fieldname": "employee_full_name",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "employee full name",
    "read_only": 1
   },
   {
    "fieldname": "family_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Family Name",
    "reqd": 1
   },
@@ -116,8 +120,12 @@
   {
    "fieldname": "employee_department_or_division",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Employee Department or Division",
-   "options": "UOT Departments"
+   "options": "UOT Departments",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_qohf",
@@ -128,13 +136,25 @@
    "fieldname": "department_manager_user",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "department manager user"
+   "label": "department manager user",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "date_of_appointment",
+   "fieldtype": "Date",
+   "label": "Date of Appointment",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-21 01:03:48.809188",
+ "modified": "2026-03-21 22:48:44.697282",
  "modified_by": "Administrator",
  "module": "uot-hr",
  "name": "UOT Employees",
@@ -200,8 +220,10 @@
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "search_fields": "employee_full_name",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "employee_full_name",
  "track_changes": 1
 }

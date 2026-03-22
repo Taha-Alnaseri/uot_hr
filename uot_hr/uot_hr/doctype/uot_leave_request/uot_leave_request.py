@@ -64,3 +64,13 @@ def has_permission(doc, ptype="read", user=None):
         return doc.employee == employee
 
     return False
+class UOTLeaveRequest(Document):
+    def validate(self):
+        if self.attachment_for_leave_request:
+            if not self.attachment_for_leave_request.lower().endswith('.pdf'):
+                frappe.throw(
+                    '<div style="direction:rtl; text-align:right;">'
+                    'يجب أن يكون المرفق بصيغة PDF فقط'
+                    '</div>',
+                    title='<div style="direction:rtl; text-align:right;">خطأ في المرفق</div>'
+                )

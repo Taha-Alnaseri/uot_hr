@@ -1,0 +1,30 @@
+[
+ {
+  "aggregate_function_based_on": "",
+  "background_color": null,
+  "color": "#ff4747",
+  "currency": "IQD",
+  "docstatus": 0,
+  "doctype": "Number Card",
+  "document_type": "UOT Leave Request",
+  "dynamic_filters_json": "[]",
+  "filters_config": null,
+  "filters_json": "[]",
+  "function": "Count",
+  "is_public": 1,
+  "is_standard": 1,
+  "label": "Leave Requests",
+  "method": null,
+  "modified": "2026-03-20 22:50:59.215752",
+  "module": "uot-hr",
+  "name": "Leave Requests",
+  "parent_document_type": "",
+  "report_field": null,
+  "report_function": "Sum",
+  "report_name": null,
+  "show_full_number": 0,
+  "show_percentage_stats": 0,
+  "stats_time_interval": "Daily",
+  "type": "Document Type"
+ }
+]

@@ -266,18 +266,7 @@ fixtures = [
     # Roles
     {
         "doctype": "Role",
-        "filters": [["name", "in", [
-            "UOT Employee",
-            "UOT Department manager",
-            "UOT HR Manager",
-            "UOT Administrative Associate",
-            "UOT Dean"
-        ]]]
-    },
-    # Leave Types
-    {
-        "doctype": "UOT Leave Type",
-        "filters": [["name", "like", "Leave Type%"]]
+        "filters": [["name", "like", "UOT%"]]
     },
     # Workflow
     {
@@ -304,9 +293,45 @@ fixtures = [
             "Review"
         ]]]
     },
+    # Leave Types
+    {
+        "doctype": "UOT Leave Type"
+    },
+    # Notifications
+    {
+        "doctype": "Notification",
+        "filters": [["name", "in", [
+            "New Leave Request  Creation",
+            "UOT Leave Request manager action",
+            "New Maternity leave request notification",
+            "uot leave request update"
+        ]]]
+    },
+    # Print Formats
+    {
+        "doctype": "Print Format",
+        "filters": [["name", "in", [
+            "UOT leave request",
+            "Maternity leave form"
+        ]]]
+    },
+    # Number Cards
+    {
+        "doctype": "Number Card",
+        "filters": [["name", "in", [
+            "Leave Requests"
+        ]]]
+    },
     # Workspace
     {
         "doctype": "Workspace",
         "filters": [["name", "=", "UOT HR"]]
+    },
+    # Custom Fields
+    {
+        "doctype": "Custom Field",
+        "filters": [["name", "in", [
+            "Leave Request-workflow_state"
+        ]]]
     }
 ]

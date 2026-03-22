@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "UOT-LR-.YY.-.#####",
  "creation": "2026-02-28 22:31:27.697790",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -14,7 +14,11 @@
   "data_lprk",
   "days_count_of_leave",
   "reason_for_leave",
-  "amended_from"
+  "mother_attachment",
+  "attachment_for_leave_request",
+  "amended_from",
+  "user_email",
+  "line_manager_email"
  ],
  "fields": [
   {
@@ -25,25 +29,29 @@
    "fieldname": "leave_type",
    "fieldtype": "Link",
    "label": "Leave Type",
-   "options": "UOT Leave Type"
+   "options": "UOT Leave Type",
+   "reqd": 1
   },
   {
    "fieldname": "from_day",
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Leave from Day"
+   "label": "Leave from Day",
+   "reqd": 1
   },
   {
    "fieldname": "to_day",
    "fieldtype": "Date",
-   "label": "Leave to Day"
+   "label": "Leave to Day",
+   "reqd": 1
   },
   {
    "fieldname": "employee",
    "fieldtype": "Link",
    "label": "Employee id",
-   "options": "UOT Employees"
+   "options": "UOT Employees",
+   "reqd": 1
   },
   {
    "depends_on": "eval: doc.leave_type != \"\u0627\u062c\u0627\u0632\u0629 \u0627\u0645\u0648\u0645\u0629\"",
@@ -63,18 +71,18 @@
    "search_index": 1
   },
   {
-   "depends_on": "eval: doc.leave_type != \"\u0627\u062c\u0627\u0632\u0629 \u0627\u0645\u0648\u0645\u0629\"",
+   "depends_on": "eval: doc.leave_type != \"Leave Type- 003\"",
    "fieldname": "reason_for_leave",
    "fieldtype": "Small Text",
    "in_list_view": 1,
    "label": "Reason for leave",
-   "mandatory_depends_on": "eval: doc.leave_type != \"\u0627\u062c\u0627\u0632\u0629 \u0627\u0645\u0648\u0645\u0629\"",
-   "reqd": 1
+   "mandatory_depends_on": "eval: doc.leave_type != \"Leave Type- 003\""
   },
   {
    "fetch_from": "employee.employee_full_name",
    "fieldname": "data_lprk",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
@@ -84,16 +92,47 @@
   {
    "fieldname": "column_break_dxxu",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.employee_user",
+   "fieldname": "user_email",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "user email",
+   "options": "Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attachment_for_leave_request",
+   "fieldtype": "Attach",
+   "label": "Attachment for Leave Request",
+   "mandatory_depends_on": "eval: doc.leave_type == \"Leave Type- 003\""
+  },
+  {
+   "depends_on": "eval: doc.leave_type == \"Leave Type- 003\"",
+   "fieldname": "mother_attachment",
+   "fieldtype": "HTML",
+   "options": "<p style=\"direction:rtl;\">\u064a\u0631\u062c\u0649 \u0627\u0631\u0641\u0627\u0642 \u0628\u064a\u0627\u0646 \u0627\u0644\u0648\u0644\u0627\u062f\u0629 \u0628\u0635\u064a\u063a\u0629 PDF</p>"
+  },
+  {
+   "fetch_from": "employee.department_manager_user",
+   "fieldname": "line_manager_email",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Line Manager Email",
+   "options": "Email",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-20 23:38:16.300455",
+ "modified": "2026-03-22 15:45:31.714280",
  "modified_by": "Administrator",
  "module": "uot-hr",
  "name": "UOT Leave Request",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

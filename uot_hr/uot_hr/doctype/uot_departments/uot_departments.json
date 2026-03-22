@@ -1,12 +1,12 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "field:department_name",
+ "autoname": "UOT-DEP-.{dep_prefix}.-.#",
  "creation": "2026-03-17 19:46:22.419209",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "department_name",
+  "dep_prefix",
   "manager_user",
   "column_break_utna",
   "department_manager"
@@ -21,7 +21,12 @@
   {
    "fieldname": "department_name",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Department Name",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -34,16 +39,23 @@
    "fieldtype": "Data",
    "label": "Manager User",
    "read_only": 1
+  },
+  {
+   "fieldname": "dep_prefix",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Department Short Name",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-20 23:31:36.208508",
+ "modified": "2026-03-22 15:32:30.807587",
  "modified_by": "Administrator",
  "module": "uot-hr",
  "name": "UOT Departments",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -79,7 +91,10 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "search_fields": "department_name",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "department_name"
 }
