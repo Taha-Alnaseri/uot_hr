@@ -29,7 +29,7 @@
  "send_system_notification": 1,
  "send_to_all_assignees": 0,
  "sender": "Notification",
- "sender_email": "tahaalislbaaa@gmail.com",
+ "sender_email": "",
  "subject": "\u0627\u062c\u0631\u0627\u0621 \u0639\u0644\u0649 \u0637\u0644\u0628 \u0627\u062c\u0627\u0632\u0629 - {{doc.data_lprk}} ",
  "value_changed": "workflow_state"
 }
