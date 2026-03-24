@@ -39,7 +39,8 @@ def sync_custom_permissions():
             fields=[
                 "role", "read", "write", "create",
                 "delete", "submit", "cancel", "amend",
-                "select", "permlevel"
+                "select", "permlevel", "print", "report",
+                "export", "share", "email"
             ]
         )
 
@@ -59,7 +60,11 @@ def sync_custom_permissions():
                 "cancel": perm.cancel,
                 "amend": perm.amend,
                 "select": perm.select,
-                "permlevel": perm.permlevel
+                "print": perm.print,
+                "report": perm.report,
+                "export": perm.export,
+                "share": perm.share,
+                "email": perm.email
             })
             custom_perm.insert(ignore_permissions=True)
 
