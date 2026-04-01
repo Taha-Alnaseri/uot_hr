@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "allow_import": 1,
  "autoname": "field:employee_id",
  "creation": "2026-03-01 19:16:03.628848",
  "doctype": "DocType",

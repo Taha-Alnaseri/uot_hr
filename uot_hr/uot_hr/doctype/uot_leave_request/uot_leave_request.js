@@ -55,3 +55,12 @@ frappe.ui.form.on('UOT Leave Request', {
         }
     }
 });
+
+
+frappe.ui.form.on('UOT Leave Request', {
+	refresh: function(frm) {
+	    setTimeout(() => {
+	        frm.page.actions.find('[data-label="Help"]').parent().parent().remove();
+	    }, 500);
+	}
+});
