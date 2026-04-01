@@ -2,68 +2,10 @@
 # For license information, please see license.txt
 
 # import frappe
-from frappe.model.document import Document
 
-
-class UOTLeaveRequest(Document):
-	pass
 import frappe
 from frappe.model.document import Document
 
-class UOTLeaveRequest(Document):
-    pass  # your existing code stays here
-
-
-def has_permission(doc, ptype="read", user=None):
-    if not user:
-        user = frappe.session.user
-
-    if "System Manager" in frappe.get_roles(user):
-        return True
-
-    roles = frappe.get_roles(user)
-
-    # ── UOT Dean, HR Manager, Admin Associate: full access ───────────────
-    if any(r in roles for r in ["UOT Dean", "UOT HR Manager", "UOT Administrative Associate"]):
-        return True
-
-    # ── UOT Department manager ───────────────────────────────────────────
-    if "UOT Department manager" in roles:
-        manager_employee = frappe.db.get_value(
-            "UOT Employees",
-            {"employee_user": user},
-            "name"
-        )
-        if not manager_employee:
-            return False
-
-        managed_departments = frappe.get_all(
-            "UOT Departments",
-            filters={"department_manager": manager_employee},
-            pluck="name"
-        )
-
-        emp_dept = frappe.db.get_value(
-            "UOT Employees",
-            doc.employee,
-            "employee_department_or_division"
-        )
-        return emp_dept in managed_departments
-
-    # ── UOT Employee ─────────────────────────────────────────────────────
-    if "UOT Employee" in roles:
-        # Allow create (doc is new, employee field may be empty yet)
-        if ptype == "create":
-            return True
-
-        employee = frappe.db.get_value(
-            "UOT Employees",
-            {"employee_user": user},
-            "name"
-        )
-        return doc.employee == employee
-
-    return False
 class UOTLeaveRequest(Document):
     def validate(self):
         if self.attachment_for_leave_request:
@@ -74,3 +16,65 @@ class UOTLeaveRequest(Document):
                     '</div>',
                     title='<div style="direction:rtl; text-align:right;">خطأ في المرفق</div>'
                 )
+
+# ── PERMISSION HOOK MUST BE OUTSIDE THE CLASS ────────────────────────────
+# Added **kwargs to prevent TypeError from hooks.py
+def has_permission(doc, ptype="read", user=None, **kwargs):
+    if not user:
+        user = frappe.session.user
+
+    roles = frappe.get_roles(user)
+
+    # 1. High-Level Roles: Full Access
+    # Included your exact spelling from hooks.py ('associte') just to be safe!
+    unrestricted_roles = [
+        "System Manager", "UOT Dean", "UOT HR Manager", 
+        "UOT Administrative Associate", "UOT Administrative associte"
+    ]
+    if any(r in roles for r in unrestricted_roles):
+        return True
+
+    # 2. Get Logged-in User's Employee ID
+    logged_in_employee = frappe.db.get_value(
+        "UOT Employees",
+        {"employee_user": user},
+        "name"
+    )
+
+    # CRITICAL: If the user is not linked to an Employee Profile, deny access
+    if not logged_in_employee:
+        return False
+
+    # 3. Handle Empty or String Documents safely
+    if not doc or isinstance(doc, str):
+        return True if ptype == "create" else None
+
+    # Safely check is_new (prevents AttributeError on dictionaries)
+    if hasattr(doc, "is_new") and doc.is_new():
+        return True
+    if ptype == "create":
+        return True
+
+    # 4. UNIVERSAL RULE: Everyone can manage their OWN records
+    if getattr(doc, "employee", None) == logged_in_employee:
+        return True
+
+    # 5. UOT Department Manager Logic
+    if "UOT Department Manager" in roles or "UOT Department manager" in roles:
+        managed_departments = frappe.get_all(
+            "UOT Departments",
+            filters={"department_manager": logged_in_employee},
+            pluck="name"
+        )
+
+        if getattr(doc, "employee", None) and managed_departments:
+            emp_dept = frappe.db.get_value(
+                "UOT Employees",
+                doc.employee,
+                "employee_department_or_division"
+            )
+            if emp_dept in managed_departments:
+                return True
+
+    # 6. Fallback
+    return False
