@@ -7,14 +7,9 @@
 // 	},
 // });
 // Let's see if the file is even loading!
-console.log("1. JS File is on the server!");
 
 frappe.ui.form.on("UOT Leave Request", {
     
-    // THIS IS THE NEW TEST!
-    refresh: function(frm) {
-        console.log("2. SUCCESS! The DocType name matches and the form is awake!");
-    },
     
     from_day: function(frm) {
         console.log("3. Start date changed!");
@@ -58,9 +53,19 @@ frappe.ui.form.on('UOT Leave Request', {
 
 
 frappe.ui.form.on('UOT Leave Request', {
-	refresh: function(frm) {
-	    setTimeout(() => {
-	        frm.page.actions.find('[data-label="Help"]').parent().parent().remove();
-	    }, 500);
-	}
+    refresh: function(frm) {
+        setTimeout(() => {
+            // 1. Get the translation from Frappe dynamically
+            let translated_word = __('Help'); 
+            
+            // 2. Convert the translated word into the URL-encoded percent signs
+            let encoded_word = encodeURIComponent(translated_word);
+
+            // 3. Remove the standard English button
+            frm.page.actions.find('[data-label="Help"]').closest('li').remove();
+            
+            // 4. Remove the translated/encoded button dynamically
+            frm.page.actions.find(`[data-label="${encoded_word}"]`).closest('li').remove();
+        }, 500);
+    }
 });
