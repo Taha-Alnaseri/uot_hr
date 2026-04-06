@@ -58,9 +58,19 @@ frappe.ui.form.on('UOT Leave Request', {
 
 
 frappe.ui.form.on('UOT Leave Request', {
-	refresh: function(frm) {
-	    setTimeout(() => {
-	        frm.page.actions.find('[data-label="Help"]').parent().parent().remove();
-	    }, 500);
-	}
+    refresh: function(frm) {
+        setTimeout(() => {
+            // 1. Get the translation from Frappe dynamically
+            let translated_word = __('Help'); 
+            
+            // 2. Convert the translated word into the URL-encoded percent signs
+            let encoded_word = encodeURIComponent(translated_word);
+
+            // 3. Remove the standard English button
+            frm.page.actions.find('[data-label="Help"]').closest('li').remove();
+            
+            // 4. Remove the translated/encoded button dynamically
+            frm.page.actions.find(`[data-label="${encoded_word}"]`).closest('li').remove();
+        }, 500);
+    }
 });

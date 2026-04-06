@@ -298,15 +298,15 @@ fixtures = [
         "doctype": "UOT Leave Type"
     },
     # Notifications
-    {
-        "doctype": "Notification",
-        "filters": [["name", "in", [
-            "New Leave Request  Creation",
-            "UOT Leave Request manager action",
-            "New Maternity leave request notification",
-            "uot leave request update"
-        ]]]
-    },
+    #{
+    #    "doctype": "Notification",
+    #    "filters": [["name", "in", [
+    #        "New Leave Request  Creation",
+    #        "UOT Leave Request manager action",
+    #        "New Maternity leave request notification",
+    #        "uot leave request update"
+    #    ]]]
+    #},
     # Print Formats
     {
         "doctype": "Print Format",
@@ -334,7 +334,7 @@ fixtures = [
             "Leave Request-workflow_state"
         ]]]
     },
-        # Notifications
+        # Role profiles
     {
         "doctype": "Role Profile",
         "filters": [["name", "in", [
@@ -344,7 +344,14 @@ fixtures = [
             "UOT Employee",
             "UOT HR Manager"
         ]]]
-    }
+    },
+        # Reprot print format
+    {
+        "doctype": "Print Format",
+        "filters": [["name", "in", [
+            "uot leave request print report format"
+        ]]]
+    }    
     # Employee Types
    # {
    #     "doctype": "UOT Employee Type"

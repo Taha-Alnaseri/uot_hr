@@ -3,15 +3,6 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2026-03-21 13:13:04.714296",
-  "name": "approved by the line manager",
-  "style": "Warning",
-  "workflow_state_name": "approved by the line manager"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
   "modified": "2026-03-21 13:12:05.528684",
   "name": "Approved by the Administrative Associate",
   "style": "Primary",
@@ -20,11 +11,20 @@
  {
   "docstatus": 0,
   "doctype": "Workflow State",
-  "icon": "question-sign",
-  "modified": "2026-02-28 23:32:27.595855",
-  "name": "Pending",
-  "style": "",
-  "workflow_state_name": "Pending"
+  "icon": "remove",
+  "modified": "2026-02-28 23:32:27.602988",
+  "name": "Rejected",
+  "style": "Danger",
+  "workflow_state_name": "Rejected"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2026-03-21 13:13:04.714296",
+  "name": "approved by the line manager",
+  "style": "Warning",
+  "workflow_state_name": "approved by the line manager"
  },
  {
   "docstatus": 0,
@@ -38,10 +38,10 @@
  {
   "docstatus": 0,
   "doctype": "Workflow State",
-  "icon": "remove",
-  "modified": "2026-02-28 23:32:27.602988",
-  "name": "Rejected",
-  "style": "Danger",
-  "workflow_state_name": "Rejected"
+  "icon": "question-sign",
+  "modified": "2026-02-28 23:32:27.595855",
+  "name": "Pending",
+  "style": "",
+  "workflow_state_name": "Pending"
  }
 ]
